@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MNIST</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+  </head>
+  <body style="font-family: GillSans, Calibri, Trebuchet, sans-serif;">
+		<div class="row">
+				<div class="col s12 m12">
+					<h1 class="header" style="text-align:center;color:#ff6d00 ;">Digit Recognizer</h1>
+					<div class="card">
+						<div class="card-image">
+							<img src="{{ url_for('static', filename='img/lenet5.png') }}">
+							<span class="card-title">Lenet5</span>
+						</div>
+						<div class="card-content">
+							<p style="font-size: 18px;">Convolutional Neural Networks are are a special kind of multi-layer neural networks. Like almost every other neural networks they are trained with a version of the back-propagation algorithm. Where they differ is in the architecture.   
+	Convolutional Neural Networks are designed to recognize visual patterns directly from pixel images with minimal preprocessing.  
+	They can recognize patterns with extreme variability (such as handwritten characters), and with robustness to distortions and simple geometric transformations.  
+	LeNet-5 is a classical convolutional network designed for handwritten and machine-printed character recognition.  
+	Here is an example of LeNet-5 in action</p>
+						</div>
+						<div class="card-action">
+							<a href="http://yann.lecun.com/exdb/lenet/">Read more about lenet5</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+        <div class="col s12 m12">
+          <div class="card">
+            <div class="card-content">
+							<h2 class="header" style="color: #ff6d00;">Lanet5 in Action</h2>
+              <p style="font-size: 18px;">This section presents lenet5 demo in action. Lenet5 is implemented by Theano bibrary and train with CPU in macbook pro mid 2017 model - core i7</p>
+            </div>
+						<div class="card-action">
+							<a href="https://github.com/ngduyanhece/dl_notebook/blob/master/mnist_nn_theano.ipynb">Source code for lanet5 in theano</a>
+            </div>
+        </div>
+      </div>
+		</div>
+		<div class="row">
+			<div class="">
+				<div style="padding: 10px 50px">
+					<div class="col s6 m6">
+				<h3 class="header">draw a digit here!</h2>
+				<canvas id="main"></canvas>
+				<p>
+					<button class="btn waves-effect waves-light red" type="submit" name="action" id="clear">CLEAR
+						<i class="material-icons right">clear</i>
+					</button>
+					<button class="btn waves-effect waves-light" type="submit" name="action" id="detect">DETECT
+						<i class="material-icons right">send</i>
+					</button>
+				</p>
+			</div>
+					<div class="col s6 m6">
+				<h3 class="header">input:</p>
+				<canvas id="input" style="border:1px solid" width="140" height="140"></canvas>
+				<hr>
+				<h3 class="header">The prediction value:</h3>
+				<a class="btn-floating btn-large waves-effect waves-light red" id="output"><i class="material-icons"></i></a>
+			</div>
+				</div>
+			</div>
+		</div>
+  </body>
+</html>
